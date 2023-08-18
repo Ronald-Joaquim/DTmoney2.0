@@ -4,7 +4,7 @@ import {
   Content,
   CloseButton,
   TransactionType,
-  TransactionTypeButton,
+  TTypeButton,
 } from "./styles";
 import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
 
@@ -26,15 +26,15 @@ export function NewTransactionModal() {
           <input type="text" placeholder="Cadegoria" required />
 
           <TransactionType>
-            <TransactionTypeButton variant="income">
+            <TTypeButton variant="income" value="income">
               <ArrowCircleUp size={24} />
               Entrada
-            </TransactionTypeButton>
+            </TTypeButton>
 
-            <TransactionTypeButton variant="outcome">
+            <TTypeButton variant="outcome" value="outcome">
               <ArrowCircleDown size={24} />
               Saída
-            </TransactionTypeButton>
+            </TTypeButton>
           </TransactionType>
 
           <button type="submit">Cadastrar</button>
