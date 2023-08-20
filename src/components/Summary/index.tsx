@@ -5,6 +5,25 @@ import { TransactionsContext } from "../../contexts/TransactionsContext";
 
 export function Summary() {
   const { transactions } = useContext(TransactionsContext);
+
+  const sumarry = transactions.reduce(
+    (acc, transaction) => {
+      if (transaction.type === "income") {
+        acc.income += transaction.price;
+        acc.total += transaction.price;
+      } else {
+        acc.outcome += transaction.price;
+        acc.total -= transaction.price;
+      }
+
+      return acc;
+    },
+    {
+      income: 0,
+      outcome: 0,
+      total: 0,
+    }
+  );
   return (
     <SummaryContainer>
       <SuymmaryCard>
@@ -13,7 +32,7 @@ export function Summary() {
           <ArrowCircleUp size={32} color="#00b37e" />
         </header>
 
-        <strong>R$ 1.554,00</strong>
+        <strong>{sumarry.income}</strong>
       </SuymmaryCard>
       <SuymmaryCard>
         <header>
@@ -21,7 +40,7 @@ export function Summary() {
           <ArrowCircleDown size={32} color="#f75a68" />
         </header>
 
-        <strong>R$ 1.893,00</strong>
+        <strong>{sumarry.outcome}</strong>
       </SuymmaryCard>
       <SuymmaryCard variant="green">
         <header>
@@ -29,7 +48,7 @@ export function Summary() {
           <CurrencyDollar size={32} color="#fff" />
         </header>
 
-        <strong>R$ 1.554,00</strong>
+        <strong>{sumarry.total}</strong>
       </SuymmaryCard>
     </SummaryContainer>
   );
