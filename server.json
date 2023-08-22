@@ -9,12 +9,20 @@
       "createdAt": "2022-07-29T19:36:44.505Z"
     },
     {
-        "id": 2,
-        "description": "Xis",
-        "type": "outcome",
-        "category": "Alimentação",
-        "price": 30,
-        "createdAt": "2022-08-29T22:36:44.505Z"
-      }
+      "id": 2,
+      "description": "Xis",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 30,
+      "createdAt": "2022-08-29T22:36:44.505Z"
+    },
+    {
+      "description": "Monitor",
+      "category": "SETUP",
+      "price": 2100,
+      "type": "outcome",
+      "createdAt": "2023-08-22T01:50:06.872Z",
+      "id": 3
+    }
   ]
 }
